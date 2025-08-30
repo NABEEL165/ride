@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideEasy - Premium Cab Booking Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-primary" href="#home">
+                <i class="fas fa-taxi me-2"></i>RideEasy
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-outline-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="fas fa-user me-2"></i>Login
+                        </button>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#signupModal">
+                            Sign Up
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100 pt-5">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold text-white mb-4 animate-fade-in">
+                        Book Your Ride in <span class="text-warning">Seconds</span>
+                    </h1>
+                    <p class="lead text-white-50 mb-4 animate-fade-in-delay">
+                        Experience premium cab booking with real-time tracking, professional drivers, and competitive pricing.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 mb-5 animate-fade-in-delay-2">
+                        <div class="feature-badge">
+                            <i class="fas fa-clock text-warning me-2"></i>24/7 Service
+                        </div>
+                        <div class="feature-badge">
+                            <i class="fas fa-shield-alt text-warning me-2"></i>Safe & Secure
+                        </div>
+                        <div class="feature-badge">
+                            <i class="fas fa-dollar-sign text-warning me-2"></i>Best Prices
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="booking-card animate-slide-up">
+                        <div class="card shadow-lg border-0 rounded-4">
+                            <div class="card-header bg-primary text-white text-center py-4 rounded-top-4">
+                                <h3 class="card-title mb-0"><i class="fas fa-car me-2"></i>Book Your Ride</h3>
+                            </div>
+                            <div class="card-body p-4">
+                                <form id="bookingForm">
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold">
+                                            <i class="fas fa-map-marker-alt text-success me-2"></i>Pickup Location
+                                        </label>
+                                        <input type="text" class="form-control form-control-lg rounded-pill" placeholder="Enter pickup location" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold">
+                                            <i class="fas fa-flag-checkered text-danger me-2"></i>Destination
+                                        </label>
+                                        <input type="text" class="form-control form-control-lg rounded-pill" placeholder="Enter destination" required>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-semibold">
+                                                <i class="fas fa-calendar text-primary me-2"></i>Date
+                                            </label>
+                                            <input type="date" class="form-control form-control-lg rounded-pill" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-semibold">
+                                                <i class="fas fa-clock text-primary me-2"></i>Time
+                                            </label>
+                                            <input type="time" class="form-control form-control-lg rounded-pill" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label fw-semibold">
+                                            <i class="fas fa-car text-info me-2"></i>Vehicle Type
+                                        </label>
+                                        <select class="form-select form-select-lg rounded-pill" required>
+                                            <option value="">Choose vehicle type</option>
+                                            <option value="economy">Economy - $0.80/km</option>
+                                            <option value="comfort">Comfort - $1.20/km</option>
+                                            <option value="premium">Premium - $1.80/km</option>
+                                            <option value="suv">SUV - $2.20/km</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill py-3 fw-semibold">
+                                        <i class="fas fa-search me-2"></i>Find Drivers
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-dark mb-3">Our Services</h2>
+                <p class="lead text-muted">Choose from our wide range of vehicle options</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card h-100">
+                        <div class="card border-0 shadow-sm h-100 rounded-4">
+                            <div class="card-body text-center p-4">
+                                <div class="service-icon mb-3">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-3">Economy</h5>
+                                <p class="card-text text-muted mb-3">Perfect for budget-conscious travelers</p>
+                                <div class="price mb-3">
+                                    <span class="h4 text-primary fw-bold">$0.80</span>
+                                    <span class="text-muted">/km</span>
+                                </div>
+                                <ul class="list-unstyled text-start">
+                                    <li><i class="fas fa-check text-success me-2"></i>4 Seats</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>AC Available</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Professional Driver</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card h-100">
+                        <div class="card border-0 shadow-sm h-100 rounded-4">
+                            <div class="card-body text-center p-4">
+                                <div class="service-icon mb-3">
+                                    <i class="fas fa-taxi"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-3">Comfort</h5>
+                                <p class="card-text text-muted mb-3">Enhanced comfort for your journey</p>
+                                <div class="price mb-3">
+                                    <span class="h4 text-primary fw-bold">$1.20</span>
+                                    <span class="text-muted">/km</span>
+                                </div>
+                                <ul class="list-unstyled text-start">
+                                    <li><i class="fas fa-check text-success me-2"></i>5 Seats</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Premium AC</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>GPS Tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card h-100">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 border-primary">
+                            <div class="popular-badge">Most Popular</div>
+                            <div class="card-body text-center p-4">
+                                <div class="service-icon mb-3">
+                                    <i class="fas fa-car-side"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-3">Premium</h5>
+                                <p class="card-text text-muted mb-3">Luxury vehicles for special occasions</p>
+                                <div class="price mb-3">
+                                    <span class="h4 text-primary fw-bold">$1.80</span>
+                                    <span class="text-muted">/km</span>
+                                </div>
+                                <ul class="list-unstyled text-start">
+                                    <li><i class="fas fa-check text-success me-2"></i>5 Seats</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Luxury Interior</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>WiFi Available</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card h-100">
+                        <div class="card border-0 shadow-sm h-100 rounded-4">
+                            <div class="card-body text-center p-4">
+                                <div class="service-icon mb-3">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <h5 class="card-title fw-bold mb-3">SUV</h5>
+                                <p class="card-text text-muted mb-3">Spacious for groups and families</p>
+                                <div class="price mb-3">
+                                    <span class="h4 text-primary fw-bold">$2.20</span>
+                                    <span class="text-muted">/km</span>
+                                </div>
+                                <ul class="list-unstyled text-start">
+                                    <li><i class="fas fa-check text-success me-2"></i>7 Seats</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Extra Luggage Space</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Premium Features</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-dark mb-3">Why Choose RideEasy?</h2>
+                <p class="lead text-muted">Experience the difference with our premium service</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon-lg mb-4">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Easy Booking</h4>
+                        <p class="text-muted">Book your ride in just a few taps with our user-friendly interface</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon-lg mb-4">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Real-time Tracking</h4>
+                        <p class="text-muted">Track your driver's location and estimated arrival time in real-time</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon-lg mb-4">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Safe & Secure</h4>
+                        <p class="text-muted">All our drivers are verified and vehicles are regularly inspected</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon-lg mb-4">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Multiple Payment Options</h4>
+                        <p class="text-muted">Pay with cash, card, or digital wallets for your convenience</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon-lg mb-4">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">24/7 Support</h4>
+                        <p class="text-muted">Our customer support team is available round the clock to help you</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-item text-center">
+                        <div class="feature-icon-lg mb-4">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Rated Drivers</h4>
+                        <p class="text-muted">All drivers are rated by passengers ensuring quality service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h2 class="display-5 fw-bold text-dark mb-4">About RideEasy</h2>
+                        <p class="lead text-muted mb-4">
+                            Founded in 2020, RideEasy has been revolutionizing urban transportation with our commitment to safety, reliability, and customer satisfaction.
+                        </p>
+                        <div class="row g-4 mb-4">
+                            <div class="col-6">
+                                <div class="stat-item text-center">
+                                    <h3 class="display-6 fw-bold text-primary mb-1">10K+</h3>
+                                    <p class="text-muted mb-0">Happy Customers</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-item text-center">
+                                    <h3 class="display-6 fw-bold text-primary mb-1">500+</h3>
+                                    <p class="text-muted mb-0">Professional Drivers</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-item text-center">
+                                    <h3 class="display-6 fw-bold text-primary mb-1">50+</h3>
+                                    <p class="text-muted mb-0">Cities Covered</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-item text-center">
+                                    <h3 class="display-6 fw-bold text-primary mb-1">4.8</h3>
+                                    <p class="text-muted mb-0">Average Rating</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-lg rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#driverModal">
+                            <i class="fas fa-user-plus me-2"></i>Become a Driver
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="https://images.pexels.com/photos/1335077/pexels-photo-1335077.jpeg" alt="About RideEasy" class="img-fluid rounded-4 shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-dark mb-3">Get In Touch</h2>
+                <p class="lead text-muted">Have questions? We're here to help!</p>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body p-5">
+                            <form id="contactForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-semibold">Name</label>
+                                        <input type="text" class="form-control form-control-lg rounded-pill" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-semibold">Email</label>
+                                        <input type="email" class="form-control form-control-lg rounded-pill" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Subject</label>
+                                    <input type="text" class="form-control form-control-lg rounded-pill" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label fw-semibold">Message</label>
+                                    <textarea class="form-control" rows="5" style="border-radius: 1rem;" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg rounded-pill px-4">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <div class="contact-item mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon me-3">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1">Address</h5>
+                                    <p class="text-muted mb-0">123 Business Street<br>City, State 12345</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon me-3">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1">Phone</h5>
+                                    <p class="text-muted mb-0">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon me-3">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1">Email</h5>
+                                    <p class="text-muted mb-0">info@rideeasy.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-links mt-4">
+                            <h5 class="fw-bold mb-3">Follow Us</h5>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-section">
+                        <h5 class="fw-bold mb-3">
+                            <i class="fas fa-taxi me-2"></i>RideEasy
+                        </h5>
+                        <p class="text-light mb-3">Your trusted partner for safe and comfortable rides across the city.</p>
+                        <div class="d-flex gap-2">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-section">
+                        <h5 class="fw-bold mb-3">Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#home" class="text-light text-decoration-none">Home</a></li>
+                            <li class="mb-2"><a href="#services" class="text-light text-decoration-none">Services</a></li>
+                            <li class="mb-2"><a href="#about" class="text-light text-decoration-none">About</a></li>
+                            <li class="mb-2"><a href="#contact" class="text-light text-decoration-none">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-section">
+                        <h5 class="fw-bold mb-3">Services</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Airport Transfers</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">City Tours</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Corporate Travel</a></li>
+                            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Event Transportation</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-section">
+                        <h5 class="fw-bold mb-3">Contact Info</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2 text-light">
+                                <i class="fas fa-map-marker-alt me-2"></i>123 Business Street, City
+                            </li>
+                            <li class="mb-2 text-light">
+                                <i class="fas fa-phone me-2"></i>+1 (555) 123-4567
+                            </li>
+                            <li class="mb-2 text-light">
+                                <i class="fas fa-envelope me-2"></i>info@rideeasy.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 text-light">
+            <div class="text-center">
+                <p class="mb-0 text-light">&copy; 2024 RideEasy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold">Login to RideEasy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email</label>
+                            <input type="email" class="form-control form-control-lg rounded-pill" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Password</label>
+                            <input type="password" class="form-control form-control-lg rounded-pill" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill">
+                            <i class="fas fa-sign-in-alt me-2"></i>Login
+                        </button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="#" class="text-decoration-none">Forgot Password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold">Join RideEasy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="signupForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">First Name</label>
+                                <input type="text" class="form-control form-control-lg rounded-pill" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Last Name</label>
+                                <input type="text" class="form-control form-control-lg rounded-pill" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email</label>
+                            <input type="email" class="form-control form-control-lg rounded-pill" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Phone</label>
+                            <input type="tel" class="form-control form-control-lg rounded-pill" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Password</label>
+                            <input type="password" class="form-control form-control-lg rounded-pill" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill">
+                            <i class="fas fa-user-plus me-2"></i>Create Account
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Driver Registration Modal -->
+    <div class="modal fade" id="driverModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold">Become a Driver</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="driverForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Full Name</label>
+                                <input type="text" class="form-control form-control-lg rounded-pill" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Phone</label>
+                                <input type="tel" class="form-control form-control-lg rounded-pill" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">License Number</label>
+                                <input type="text" class="form-control form-control-lg rounded-pill" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Vehicle Type</label>
+                                <select class="form-select form-select-lg rounded-pill" required>
+                                    <option value="">Choose vehicle type</option>
+                                    <option value="economy">Economy</option>
+                                    <option value="comfort">Comfort</option>
+                                    <option value="premium">Premium</option>
+                                    <option value="suv">SUV</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Vehicle Model</label>
+                                <input type="text" class="form-control form-control-lg rounded-pill" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">License Plate</label>
+                                <input type="text" class="form-control form-control-lg rounded-pill" required>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Experience (years)</label>
+                            <select class="form-select form-select-lg rounded-pill" required>
+                                <option value="">Select experience</option>
+                                <option value="1-2">1-2 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="5+">5+ years</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill">
+                            <i class="fas fa-car me-2"></i>Submit Application
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
